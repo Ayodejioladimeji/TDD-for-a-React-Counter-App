@@ -18,13 +18,20 @@ const Counter = () => {
     <div className='counter'>
       <div className='counter_box'>
         <h2 data-testid='header'>My Counter</h2>
-        <h1 data-testid='counter'>{counterValue}</h1>
+        <h1
+          data-testid='counter'
+          className={`${counterValue >= 100 ? 'green' : ''}${
+            counterValue <= -100 ? 'red' : ''
+          }`}
+        >
+          {counterValue}
+        </h1>
 
         <input
           type='number'
           data-testid='input'
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) => setInputValue(parseInt(e.target.value))}
         />
 
         <div className='counter_btn'>
