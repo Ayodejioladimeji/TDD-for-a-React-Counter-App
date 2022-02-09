@@ -11,3 +11,17 @@
   width: 25%;
   border-radius: 10px;
 }
+
+/* The section of the counter button */
+.counter_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter_btn button {
+  border: none;
+  background: #999;
+  padding: 5px;
+  outline: none;
+}
