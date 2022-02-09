@@ -3,13 +3,34 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 0 20px;
 }
 
 .counter_box {
   border: 2px solid red;
   padding: 15px;
-  width: 25%;
+  width: 95%;
   border-radius: 10px;
+}
+
+@media screen and (min-width: 800px) {
+  .counter_box {
+    width: 35%;
+  }
+}
+
+/* The input section */
+.counter_box .form_group {
+  width: 100%;
+}
+
+.counter_box input {
+  padding: 10px 0;
+  text-align: center;
+  border: 1px solid #999;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 /* The section of the counter button */
@@ -22,6 +43,8 @@
 .counter_btn button {
   border: none;
   background: #999;
-  padding: 5px;
+  padding: 10px 45px;
   outline: none;
+  font-size: 20px;
+  font-weight: bold;
 }
