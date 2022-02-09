@@ -25,3 +25,18 @@ test('Input contains initial value of 1', () => {
 
   expect(InputElement.value).toBe('1');
 });
+
+// checking if the button renders correctly with their appropriate symbols
+test('add button renders with +', () => {
+  const { getByTestId } = render(<Counter />);
+  const addBtn = getByTestId('add-btn');
+
+  expect(addBtn.textContent).toBe('+');
+});
+
+test('add button renders with -', () => {
+  const { getByTestId } = render(<Counter />);
+  const minusBtn = getByTestId('minus-btn');
+
+  expect(minusBtn.textContent).toBe('-');
+});
