@@ -54,3 +54,14 @@ test('changing the value of the input works', () => {
 
   expect(inputElement.value).toBe('5');
 });
+
+// Clicking on the plus button adds one to the counter
+test('click on plus button to add one to the counter', () => {
+  const { getByTestId } = render(<Counter />);
+  const addBtn = getByTestId('add-btn');
+  const counterElement = getByTestId('counter');
+
+  fireEvent.click(addBtn);
+
+  expect(counterElement.textContent).toBe('1');
+});
