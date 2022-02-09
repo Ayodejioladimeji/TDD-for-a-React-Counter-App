@@ -11,7 +11,12 @@ const Counter = () => {
         <h2 data-testid='header'>My Counter</h2>
         <h1 data-testid='counter'>{counterValue}</h1>
 
-        <input type='number' data-testid='input' value={inputValue} />
+        <input
+          type='number'
+          data-testid='input'
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
 
         <div className='counter_btn'>
           <button data-testid='minus-btn'>-</button>

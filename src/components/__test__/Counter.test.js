@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Counter from '../Counter';
 
 // Checking if the header text renders with == My Counter ==
@@ -39,4 +39,18 @@ test('add button renders with -', () => {
   const minusBtn = getByTestId('minus-btn');
 
   expect(minusBtn.textContent).toBe('-');
+});
+
+// Check if changing the value of the input works correctly
+test('changing the value of the input works', () => {
+  const { getByTestId } = render(<Counter />);
+  const inputElement = getByTestId('input');
+
+  fireEvent.change(inputElement, {
+    target: {
+      value: '5',
+    },
+  });
+
+  expect(inputElement.value).toBe('5');
 });
