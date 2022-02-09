@@ -17,3 +17,11 @@ test('Counter test initially starts with 0', () => {
 
   expect(counterElement.textContent).toBe('0');
 });
+
+// checking if the counter input exists and contains initial value of === 1 ==
+test('Input contains initial value of 1', () => {
+  const { getByTestId } = render(<Counter />);
+  const InputElement = getByTestId('input');
+
+  expect(InputElement.value).toBe('1');
+});
