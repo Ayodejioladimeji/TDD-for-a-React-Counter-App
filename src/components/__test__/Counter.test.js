@@ -65,3 +65,14 @@ test('click on plus button to add one to the counter', () => {
 
   expect(counterElement.textContent).toBe('1');
 });
+
+// Clicking on the minus button subtract one from the counter
+test('click on minus button to subtract one from the counter', () => {
+  const { getByTestId } = render(<Counter />);
+  const minusBtn = getByTestId('minus-btn');
+  const counterElement = getByTestId('counter');
+
+  fireEvent.click(minusBtn);
+
+  expect(counterElement.textContent).toBe('-1');
+});
